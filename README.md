@@ -1,2 +1,7 @@
 # d4_Lasse_Oskar
-This is a github repository for eliverable 4 for INF201.
+
+students:
+Lasse Lindholm
+Oskar Nerheim
+
+This is a github repository for deliverable 4 for INF201.
