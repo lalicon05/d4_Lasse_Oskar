@@ -1,0 +1,54 @@
+# This file is based on https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "walk"
+version = "0.0.1"
+authors = [
+  { name="Lasse Lindholm", email="lasse.lindholm@nmbu.no" },
+  { name="Oskar Nerheim", email="oskar.nerheim@nmbu.no" }
+]
+description = "A simulation of Alex walking from AudMax to either Pentagon or Kaia"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["matplotlib",
+                "numpy"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Topic :: Games/Entertainment :: Board Games"
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/lalicon05/d4_Lasse_Oskar"
+Issues = "https://github.com/lalicon05/d4_Lasse_Oskar/issues"
+
+[tool.setuptools]
+packages = ["walk"]
+script-files = ["examples/run_simulation.py"]
+
+[tool.tox]
+requires = ["tox>=4.32"]
+env_list = ["format", "3.12"]
+
+[tool.tox.env_run_base]
+deps = ["pytest", "pytest-cov"]
+description = "Run test under {base_python}"
+commands = [["pytest", "--cov", "walking"]]
+
+[tool.tox.env.format]
+deps = ["flake8"]
+description = "Check code style using flake8"
+skip_install = true
+commands = [["flake8", "--max-line-length", "120", "walking", "tests"]]
+
