@@ -13,7 +13,8 @@ class Alex:
         aud_pos (int): position of AudMax
         kaia_pos (int): position of Kaia
         pent_pos (int): position of Pentagon
-        walker_pos (int): current position of Alex
+        pos (int): current position of Alex
+        total_steps (int): counter for steps
 
         step_chance (float), default 0.2: chance of stepping
         east_weight (float): chance of moving east
@@ -24,13 +25,15 @@ class Alex:
         self.aud_pos = aud_pos
         self.kaia_pos = kaia_pos
         self.pent_pos = pentagon_pos
-        self.alex_pos = aud_pos
+        self.pos = aud_pos
+        self.total_steps = 0
 
         self.step_chance = step_chance
         self.east_weight = east_weigth
 
         self.p_pentagon = p_pentagon
         self.p_kaia = p_kaia
+
     
     def step(self):
         step_rng = random.random() # Gets a random float between 0 and 1
@@ -38,7 +41,17 @@ class Alex:
         if step_rng > self.step_chance: # Checks if Alex takes a step
             dir_rng = random.random()
             
-            if dir_rng >= self.east_weight: # Checks which direction to move
+            if dir_rng <= self.east_weight: # Checks which direction to move
                 self.pos += 1
             else:
                 self.pos -= 1
+            
+            self.pos = max(0, min(100, self.pos))
+            self.total_steps += 1
+    
+    def check_place_stop(self):
+        if self.pos == self.pent_pos:
+            return random.random() < self.p_pentagon
+        
+        elif self.pos == self.kaia_pos:
+            return random.random() < self.p_kaia
