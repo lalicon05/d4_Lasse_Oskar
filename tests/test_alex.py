@@ -1,7 +1,7 @@
 import walking.alex as alex_module
 from walking.alex import Alex
 
-
+# a test to see that stepping only increases total steps by 1 and that the directions are correct
 def test_try_step_direction_and_count():
     a = Alex(aud_pos=50, kaia_pos=60, pentagon_pos=30, step_chance=1.0, east_weight=1.0)
     assert a.pos == 50
@@ -16,7 +16,7 @@ def test_try_step_direction_and_count():
     assert b.pos == 49
     assert b.total_steps == 1
 
-
+# checks that the position cannot go outside the limits (0 and 100)
 def test_try_step_boundary_clamping():
     a = Alex(aud_pos=50, kaia_pos=60, pentagon_pos=30, step_chance=1.0, east_weight=1.0)
     a.pos = 100
@@ -32,14 +32,14 @@ def test_try_step_boundary_clamping():
     assert b.pos == 0
     assert b.total_steps == 1
 
-
+# checks that the stops at Kaia and Pentagon works correctly
 def test_check_place_stop_with_monkeypatch(monkeypatch):
     a = Alex(aud_pos=50, kaia_pos=60, pentagon_pos=30, p_pentagon=0.5, p_kaia=0.5)
 
     monkeypatch.setattr(alex_module.random, "random", lambda: 0.0)
     a.pos = a.kaia_pos
     assert a.check_place_stop() is True
-    
+
     a.pos = a.pent_pos
     assert a.check_place_stop() is True
 
