@@ -34,14 +34,14 @@ def print_results(results: list):
             pent_step += result[1]
 
     # calculates average time in seconds to get to both Kaia and Pentagon
-    avg_kaia_sec = round(kaia_sec / len(kaia_results), 3)
-    avg_pent_sec = round(pent_sec / len(pent_results), 3)
+    avg_kaia_sec = round(kaia_sec / len(kaia_results), 2)
+    avg_pent_sec = round(pent_sec / len(pent_results), 2)
 
     # calculates average steps to get to both Kaia and Pentagon
-    avg_kaia_step = round(kaia_step / len(kaia_results), 3)
-    avg_pent_step = round(pent_step / len(pent_results), 3)
+    avg_kaia_step = round(kaia_step / len(kaia_results), 2)
+    avg_pent_step = round(pent_step / len(pent_results), 2)
 
-    print(f"Kaia ends: {len(kaia_results)}Pentagon ends: {len(pent_results)}")
+    print(f"Kaia ends: {len(kaia_results)}, Pentagon ends: {len(pent_results)}")
     print(f"avg kaia time: {avg_kaia_sec}, avg pent time: {avg_pent_sec}")
     print(f"avg kaia step: {avg_kaia_step}, avg pent step: {avg_pent_step}")
 
