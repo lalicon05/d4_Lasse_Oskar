@@ -34,8 +34,7 @@ Homepage = "https://github.com/lalicon05/d4_Lasse_Oskar"
 Issues = "https://github.com/lalicon05/d4_Lasse_Oskar/issues"
 
 [tool.setuptools]
-packages = ["walking"]
-script-files = ["examples/run_sim.py"]
+packages = ["walking", "examples"]
 include-package-data = true
 
 [tool.tox]
