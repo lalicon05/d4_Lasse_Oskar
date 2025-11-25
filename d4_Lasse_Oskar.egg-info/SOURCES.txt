@@ -7,7 +7,9 @@ d4_Lasse_Oskar.egg-info/SOURCES.txt
 d4_Lasse_Oskar.egg-info/dependency_links.txt
 d4_Lasse_Oskar.egg-info/requires.txt
 d4_Lasse_Oskar.egg-info/top_level.txt
+examples/explore_sim.ipynb
 examples/run_sim.py
+examples/test_sim.py
 tests/test_alex.py
 tests/test_environment.py
 tests/test_simulation.py
