@@ -29,4 +29,7 @@ class Simulation:
             seconds += 1
 
             if alex.check_place_stop():
-                return [alex.pos, alex.total_steps, seconds]
+                if alex.pos == alex.kaia_pos:
+                    return ["kaia", alex.total_steps, seconds]
+                elif alex.pos == alex.pent_pos:
+                    return ["pentagon", alex.total_steps, seconds]
