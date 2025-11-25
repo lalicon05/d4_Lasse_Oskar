@@ -15,7 +15,8 @@ description = "A simulation of Alex walking from AudMax to either Pentagon or Ka
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = ["matplotlib",
-                "numpy"]
+                "numpy",
+                "random"]
 
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -34,8 +35,8 @@ Homepage = "https://github.com/lalicon05/d4_Lasse_Oskar"
 Issues = "https://github.com/lalicon05/d4_Lasse_Oskar/issues"
 
 [tool.setuptools]
-packages = ["walk"]
-script-files = ["examples/run_simulation.py"]
+packages = ["walking"]
+script-files = ["examples/run_sim.py"]
 
 [tool.tox]
 requires = ["tox>=4.32"]
