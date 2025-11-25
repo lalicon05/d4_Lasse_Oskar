@@ -7,6 +7,7 @@ Oskar Nerheim
 
 from walking.environment import Environment
 from walking.simulation import Simulation
+from walking.alex import Alex
 
 
 # Function to print results simulating automatically

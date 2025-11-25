@@ -1,3 +1,4 @@
 # This file lists files to be included in package
 
 include examples/*.ipynb
+include examples/*.py
