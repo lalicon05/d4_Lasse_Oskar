@@ -27,4 +27,4 @@ jobs:
       run: tox -e format
 
     - name: Run testsuite
-      run: tox -e testsuite
+      run: pytest --cov=walking --cov-report=xml
