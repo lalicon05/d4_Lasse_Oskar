@@ -15,8 +15,7 @@ description = "A simulation of Alex walking from AudMax to either Pentagon or Ka
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["matplotlib",
-                "numpy",
-                "random"]
+                "numpy"]
 
 classifiers = [
     "Programming Language :: Python :: 3",
