@@ -5,15 +5,16 @@ Oskar Nerheim
 """
 import random
 
+
 class Alex:
     def __init__(
-                self, aud_pos: int, 
-                kaia_pos: int, 
-                pentagon_pos: int, 
-                step_chance: float =0.2, 
-                east_weight: float=0.5,
-                p_pentagon: float=0.5,
-                p_kaia: float =0.5
+                self, aud_pos: int,
+                kaia_pos: int,
+                pentagon_pos: int,
+                step_chance: float = 0.2,
+                east_weight: float = 0.5,
+                p_pentagon: float = 0.5,
+                p_kaia: float = 0.5
                 ):
         """
         simulates Alex walking from Aud Max to Kaia or Pentagon
@@ -45,16 +46,16 @@ class Alex:
     def try_step(self):
         """
         Alex attempts to step
-        If they step, they step east or west based on the "east_weight" variable
+        If they step, they step east or west based on "east_weight"
         """
-        step_rng = random.random() # Gets a random float between 0 and 1
-        if step_rng < self.step_chance: # Checks if Alex takes a step
+        step_rng = random.random()  # Gets a random float between 0 and 1
+        if step_rng < self.step_chance:  # Checks if Alex takes a step
             dir_rng = random.random()
-            if dir_rng < self.east_weight: # Checks which direction to move
+            if dir_rng < self.east_weight:  # Checks which direction to move
                 self.pos += 1
             else:
                 self.pos -= 1
-            
+
             self.pos = max(0, min(100, self.pos))
             self.total_steps += 1
 
@@ -64,9 +65,9 @@ class Alex:
         """
         if self.pos == self.pent_pos:
             return random.random() < self.p_pentagon
-        
+
         elif self.pos == self.kaia_pos:
             return random.random() < self.p_kaia
-        
+
         else:
             return False

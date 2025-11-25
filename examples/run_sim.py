@@ -10,7 +10,7 @@ from walking.simulation import Simulation
 
 
 # Function to print results simulating automatically
-def print_results(results : list):
+def print_results(results: list):
 
     # The first variables are variables that are going to be added to
     kaia_results = []
@@ -41,16 +41,16 @@ def print_results(results : list):
     avg_kaia_step = round(kaia_step / len(kaia_results), 3)
     avg_pent_step = round(pent_step / len(pent_results), 3)
 
-    print(f"Kaia ending: {len(kaia_results)}|| Pentagon ending: {len(pent_results)}")
+    print(f"Kaia ends: {len(kaia_results)}Pentagon ends: {len(pent_results)}")
     print(f"avg kaia time: {avg_kaia_sec}, avg pent time: {avg_pent_sec}")
     print(f"avg kaia step: {avg_kaia_step}, avg pent step: {avg_pent_step}")
 
 
-#runs the simulations 100 times while printing, where Alex ends up, steps, and seconds
+# runs the simulations 1000 times while prints information from the results
 if __name__ == "__main__":
     envi = Environment()
 
-    #make a sim object with default settings and simulate it 1000 times
+    # make a sim object with default settings and simulate it 1000 times
     sim = Simulation(envi)
     result_1 = []
     for i in range(1000):
