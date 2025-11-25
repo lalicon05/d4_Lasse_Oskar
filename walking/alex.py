@@ -50,7 +50,7 @@ class Alex:
         step_rng = random.random() # Gets a random float between 0 and 1
         if step_rng < self.step_chance: # Checks if Alex takes a step
             dir_rng = random.random()
-            if dir_rng <= self.east_weight: # Checks which direction to move
+            if dir_rng < self.east_weight: # Checks which direction to move
                 self.pos += 1
             else:
                 self.pos -= 1
