@@ -49,6 +49,8 @@ def print_results(results : list):
 #runs the simulations 100 times while printing, where Alex ends up, steps, and seconds
 if __name__ == "__main__":
     envi = Environment()
+
+    #make a sim object with default settings and simulate it 1000 times
     sim = Simulation(envi)
     result_1 = []
     for i in range(1000):

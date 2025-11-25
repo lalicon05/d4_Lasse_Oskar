@@ -29,7 +29,7 @@ class Alex:
         p_pentagon (float): chance of staying at pentagon
         p_kaia (float): chance of staying at kaia
         """
-
+        # Sets all essential variables
         self.aud_pos = aud_pos
         self.kaia_pos = kaia_pos
         self.pent_pos = pentagon_pos
