@@ -3,7 +3,7 @@ from walking.alex import Alex
 
 
 # a test to see that steps increase correctly and that directions are correct
-def test_try_step_direction_and_count():
+def test_try_step_and_count():
     a = Alex(
                 aud_pos=50,
                 kaia_pos=60,
@@ -33,7 +33,7 @@ def test_try_step_direction_and_count():
 
 
 # checks that the position cannot go outside the limits (0 and 100)
-def test_try_step_boundary_clamping():
+def test_boundaries():
     a = Alex(
                 aud_pos=50,
                 kaia_pos=60,
@@ -63,8 +63,9 @@ def test_try_step_boundary_clamping():
     assert b.total_steps == 1
 
 
-# checks that the stops at Kaia and Pentagon works correctly
-def test_check_place_stop_with_monkeypatch(monkeypatch):
+# Checks that the stops at Kaia and Pentagon works correctly
+# Using monkeypatch to mimic random behavior but instead make it 'deterministick'
+def test_check_place_stop(monkeypatch):
     a = Alex(
                 aud_pos=50,
                 kaia_pos=60,
@@ -73,16 +74,20 @@ def test_check_place_stop_with_monkeypatch(monkeypatch):
                 p_kaia=0.5
             )
 
+    # Guarantee that alex stops when placed at Kaia
     monkeypatch.setattr(alex_module.random, "random", lambda: 0.0)
     a.pos = a.kaia_pos
     assert a.check_place_stop() is True
 
+    # Guarantee that Alex stops when placed at pentagon
     a.pos = a.pent_pos
     assert a.check_place_stop() is True
 
+    # Guarantee that Alex desn't stop when at Kaia
     monkeypatch.setattr(alex_module.random, "random", lambda: 1.0)
     a.pos = a.kaia_pos
     assert a.check_place_stop() is False
 
+    # Guarantee that Alex doesn't stop when at Pentagon
     a.pos = a.pent_pos
     assert a.check_place_stop() is False
