@@ -7,6 +7,7 @@ Lasse Lindholm
 Oskar Nerheim
 """
 
+
 # a test to see that steps increase correctly and that directions are correct
 def test_try_step_and_count():
     a = Alex(
@@ -69,7 +70,7 @@ def test_boundaries():
 
 
 # Checks that the stops at Kaia and Pentagon works correctly
-# Using monkeypatch to mimic random behavior but instead make it 'deterministick'
+# Using monkeypatch to force random number to be 'deterministick'
 def test_check_place_stop(monkeypatch):
     a = Alex(
                 aud_pos=50,

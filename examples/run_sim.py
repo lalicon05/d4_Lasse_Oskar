@@ -7,7 +7,6 @@ Oskar Nerheim
 
 from walking.environment import Environment
 from walking.simulation import Simulation
-from walking.alex import Alex
 
 
 # Function to print results simulating automatically
@@ -43,7 +42,7 @@ def print_results(results: list):
     avg_pent_step = round(pent_step / len(pent_results), 2)
 
     # prints out the data
-    print(f"Kaia ends: {len(kaia_results)}, Pentagon ends: {len(pent_results)}")
+    print(f"Kaia end: {len(kaia_results)}, Pentagon end: {len(pent_results)}")
     print(f"avg kaia time: {avg_kaia_sec}, avg pent time: {avg_pent_sec}")
     print(f"avg kaia step: {avg_kaia_step}, avg pent step: {avg_pent_step}")
 
