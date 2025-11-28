@@ -1,5 +1,10 @@
 from walking.environment import Environment
 
+"""
+students:
+Lasse Lindholm
+Oskar Nerheim
+"""
 
 # tests that all values are the expected default values
 def test_environment_defaults():

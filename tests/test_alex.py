@@ -1,6 +1,11 @@
 import walking.alex as alex_module
 from walking.alex import Alex
 
+"""
+students:
+Lasse Lindholm
+Oskar Nerheim
+"""
 
 # a test to see that steps increase correctly and that directions are correct
 def test_try_step_and_count():

@@ -1,6 +1,11 @@
 from walking.environment import Environment
 from walking.simulation import Simulation
 
+"""
+students:
+Lasse Lindholm
+Oskar Nerheim
+"""
 
 def test_run_once_reaches_kaia_and_counts_steps_and_seconds():
     env = Environment(aud_pos=50, pentagon_pos=30, kaia_pos=60)
